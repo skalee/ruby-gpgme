@@ -43,7 +43,7 @@ if arg_config('--use-system-libraries', ENV['RUBY_GPGME_USE_SYSTEM_LIBRARIES'])
   end
 
   $CFLAGS += ' ' << `gpgme-config --cflags`.chomp
-  $libs += ' ' << `gpgme-config --libs`.chomp
+  $LDFLAGS += ' ' << `gpgme-config --libs`.chomp
 else
   message <<-'EOS'
 ************************************************************************
